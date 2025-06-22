@@ -14,7 +14,7 @@ public class MyHashSet {
     }
 
     public void insert(Object key) {
-        int bucketIndex = getBucketIndex(key);
+        int bucketIndex = Math.abs(key.hashCode()) % buckets.length;
         LinkedList<Object> bucket = buckets[bucketIndex];
         if (!bucket.contains(key)) {
             bucket.add(key);
@@ -22,18 +22,12 @@ public class MyHashSet {
         }
     }
 
-    // Удаление элемента
     public boolean remove(Object key) {
-        int bucketIndex = getBucketIndex(key);
+        int bucketIndex = Math.abs(key.hashCode()) % buckets.length;
         LinkedList<Object> bucket = buckets[bucketIndex];
         boolean removed = bucket.remove(key);
         if (removed) size--;
         return removed;
-    }
-
-    // Вычисление индекса корзины
-    private int getBucketIndex(Object key) {
-        return Math.abs(key.hashCode()) % buckets.length;
     }
 
     public int size() {

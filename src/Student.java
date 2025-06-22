@@ -1,8 +1,8 @@
 import java.util.List;
 
 public class Student {
-    private final String name;
-    private final List<Book> books;
+    private String name;
+    private List<Book> books; // Стандартный List
 
     public Student(String name, List<Book> books) {
         this.name = name;
@@ -15,7 +15,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" + name + ", books=" + books.size() + "}";
+        return "Student: " + name + " | Books: " + books.size();
     }
-
 }

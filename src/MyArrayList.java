@@ -10,28 +10,20 @@ public class MyArrayList {
         size = 0;
     }
 
-
     public void add(Object element) {
-        if (size == elements.length) {
-            resize();
-        }
+        if (size == elements.length) resize();
         elements[size++] = element;
     }
 
-    // Добавление коллекции
     public void addAll(Collection<?> c) {
-        for (Object element : c) {
-            add(element);
-        }
+        for (Object element : c) add(element);
     }
 
-    // Получение элемента по индексу
     public Object get(int index) {
         checkIndex(index);
         return elements[index];
     }
 
-    // Удаление элемента по индексу
     public Object remove(int index) {
         checkIndex(index);
         Object removed = elements[index];
@@ -40,14 +32,12 @@ public class MyArrayList {
         return removed;
     }
 
-    // Проверка индекса
     private void checkIndex(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
     }
 
-    // Увеличение емкости
     private void resize() {
         Object[] newElements = new Object[elements.length * 2];
         System.arraycopy(elements, 0, newElements, 0, size);
