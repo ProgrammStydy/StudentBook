@@ -13,7 +13,6 @@ public class MyHashSet {
         size = 0;
     }
 
-    // Вставка элемента
     public void insert(Object key) {
         int bucketIndex = getBucketIndex(key);
         LinkedList<Object> bucket = buckets[bucketIndex];

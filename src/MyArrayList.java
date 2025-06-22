@@ -10,7 +10,7 @@ public class MyArrayList {
         size = 0;
     }
 
-    // Добавление элемента
+
     public void add(Object element) {
         if (size == elements.length) {
             resize();

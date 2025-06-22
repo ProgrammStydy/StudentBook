@@ -3,7 +3,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // Создание книг
         Book book1 = new Book("Java Basics", 1999, 300);
         Book book2 = new Book("Advanced Java", 2005, 450);
         Book book3 = new Book("Design Patterns", 2002, 500);

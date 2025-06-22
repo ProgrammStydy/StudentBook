@@ -24,7 +24,7 @@ public class Book {
         return pages;
     }
 
-    // equals() и hashCode() для корректной работы distinct()
+    // equals() and hashCode() для корректной работы distinct()
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
