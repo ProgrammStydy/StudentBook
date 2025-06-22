@@ -23,7 +23,7 @@ public class Main {
                 new Student("Elena", Arrays.asList(book2, book4, book6, book8, book10))
         );
 
-        // Обработка данных стримом
+        // Обработка данных  стримом
         students.stream()
                 .peek(System.out::println)
                 .flatMap(student -> student.getBooks().stream())
