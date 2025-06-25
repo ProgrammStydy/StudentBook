@@ -27,6 +27,7 @@ public class Book {
         return year == book.year && pages == book.pages && Objects.equals(title, book.title);
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(title, year, pages);
