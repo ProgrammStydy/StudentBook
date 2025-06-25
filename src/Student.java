@@ -2,7 +2,7 @@ import java.util.List;
 
 public class Student {
     private String name;
-    private List<Book> books; // Стандартный List
+    private List<Book> books;
 
     public Student(String name, List<Book> books) {
         this.name = name;

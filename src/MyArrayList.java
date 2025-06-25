@@ -1,6 +1,6 @@
 import java.util.Collection;
 
-public class MyArrayList {
+public class MyArrayList<E> {
     private Object[] elements;
     private int size;
     private static final int DEFAULT_CAPACITY = 10;
@@ -10,23 +10,29 @@ public class MyArrayList {
         size = 0;
     }
 
-    public void add(Object element) {
-        if (size == elements.length) resize();
+    public void add(E element) {
+        if (size == elements.length) {
+            resize();
+        }
         elements[size++] = element;
     }
 
-    public void addAll(Collection<?> c) {
-        for (Object element : c) add(element);
+    public void addAll(Collection<? extends E> c) {
+        for (E element : c) {
+            add(element);
+        }
     }
 
-    public Object get(int index) {
+    @SuppressWarnings("unchecked")
+    public E get(int index) {
         checkIndex(index);
-        return elements[index];
+        return (E) elements[index];
     }
 
-    public Object remove(int index) {
+    @SuppressWarnings("unchecked")
+    public E remove(int index) {
         checkIndex(index);
-        Object removed = elements[index];
+        E removed = (E) elements[index];
         System.arraycopy(elements, index + 1, elements, index, size - index - 1);
         elements[--size] = null;
         return removed;
